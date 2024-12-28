@@ -12,7 +12,7 @@ const DashboardLayout = () => {
             <Sidebar />
           </aside>
           {/* ---> Main Content  */}
-          <main className="h-full w-full overflow-y-auto bg-deepBlack p-5">
+          <main className="h-full w-full overflow-y-auto bg-gradient-to-br from-deepBlack to-[#02071d] p-5">
             <Outlet />
           </main>
         </div>
