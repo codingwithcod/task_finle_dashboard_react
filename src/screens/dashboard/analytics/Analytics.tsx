@@ -1,11 +1,11 @@
-const Settings = () => {
+const Analytics = () => {
   return (
     <div className="flex h-full w-full items-center justify-center">
       <h1 className="bg-gradient-to-r from-indigo-700 to-blue-700 bg-clip-text text-5xl font-bold leading-normal text-transparent">
-        Settings
+        Analytics
       </h1>
     </div>
   );
 };
 
-export default Settings;
+export default Analytics;
