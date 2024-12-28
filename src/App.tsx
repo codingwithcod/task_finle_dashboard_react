@@ -1,8 +1,11 @@
+import { BrowserRouter } from "react-router";
+import AppRoutes from "./AppRoutes";
+
 const App = () => {
   return (
-    <h1 className="text-6xl text-indigo-500  font-bold underline">
-      Hello world!
-    </h1>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 };
 
