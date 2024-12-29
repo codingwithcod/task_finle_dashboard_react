@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { FaCaretDown } from "react-icons/fa";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
 interface IChartData {
   name: string;
@@ -33,10 +33,6 @@ const ActivityBarChart: FC = () => {
     return `${tick / 1000}K`;
   };
 
-  const customTooltip = (tick: number) => {
-    return `₹${tick.toLocaleString()}`;
-  };
-
   return (
     <div className="h-full w-full rounded-md bg-background">
       {/* ---> Bar chart Header  */}
@@ -55,7 +51,6 @@ const ActivityBarChart: FC = () => {
 
       {/* ---> Bar chart goes here  */}
       <div className="flex h-[80%] w-full justify-between">
-        {/* {totalRevenueThisYear > 0 ? ( */}
         <ResponsiveContainer>
           <BarChart data={chartData}>
             <XAxis
@@ -69,10 +64,6 @@ const ActivityBarChart: FC = () => {
               axisLine={false}
               tickLine={false}
               tickFormatter={customYAxisTick}
-            />
-            <Tooltip
-              formatter={customTooltip}
-              contentStyle={{ background: "black" }}
             />
 
             <Bar
