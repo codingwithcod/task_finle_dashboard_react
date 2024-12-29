@@ -8,6 +8,7 @@ import { PiHamburger } from "react-icons/pi";
 import { BiDish } from "react-icons/bi";
 import { MdChevronRight } from "react-icons/md";
 import CustomerTable from "./components/CustomerTable";
+import TopProducts from "./components/TopProducts";
 
 const DashboardHome = () => {
   return (
@@ -169,12 +170,16 @@ const DashboardHome = () => {
           </div>
         </div>
 
-        {/* ---> Recent orders and feedback. */}
+        {/* ---> Recent Customer and feedback. */}
         <div className="flex flex-col gap-5 lg:flex-row">
+          {/* ---> Customer table. */}
           <div className="min-h-52 w-full rounded-md bg-background lg:w-[65%]">
             <CustomerTable />
           </div>
-          <div className="h-52 w-full rounded-md bg-red-500/50 lg:w-[35%]"></div>
+          {/* ---> Customer feedback. */}
+          <div className="min-h-52 w-full rounded-md bg-background lg:w-[35%]">
+            <TopProducts />
+          </div>
         </div>
       </div>
     </div>
