@@ -46,7 +46,7 @@ const ActivityBarChart: FC = () => {
         </div>
 
         <div className="text-xxs text-lightText flex flex-col gap-2 sm:flex-row">
-          <div className="flex h-7 w-24 cursor-pointer items-center justify-center gap-1 rounded-full border bg-gray-500/40">
+          <div className="flex h-7 w-24 cursor-pointer items-center justify-center gap-1 rounded-full border border-gray-400/40 bg-gray-500/40">
             <p className="text-sm">Monthly</p>
             <FaCaretDown />
           </div>
