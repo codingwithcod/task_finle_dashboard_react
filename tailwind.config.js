@@ -9,6 +9,9 @@ export default {
         forground: "#fff",
         deepBlack: "#010409",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],
