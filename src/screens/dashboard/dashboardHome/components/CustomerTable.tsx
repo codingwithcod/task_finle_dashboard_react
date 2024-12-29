@@ -70,14 +70,14 @@ const CustomerTable = () => {
                           className="h-full w-full object-cover"
                         />
                       </div>
-                      <p>
+                      <p className="w-24 truncate">
                         {firstName} {lastName}
                       </p>
                     </td>
                     <td className="px-4 py-2">{age}</td>
-                    <td className="px-4 py-2">{gender}</td>
-                    <td className="px-4 py-2">{phone}</td>
-                    <td className="px-4 py-2">{address.city}</td>
+                    <td className="text-nowrap px-4 py-2">{gender}</td>
+                    <td className="text-nowrap px-4 py-2">{phone}</td>
+                    <td className="text-nowrap px-4 py-2">{address.city}</td>
                   </tr>
                 );
               })}
