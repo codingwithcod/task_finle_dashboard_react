@@ -8,11 +8,11 @@ const Topbar = () => {
   return (
     <div className="flex h-full items-center justify-between px-5">
       {/* ---> Left side Logo and Search bar */}
-      <div className="flex items-center gap-20">
+      <div className="flex items-center gap-10 md:gap-20">
         <Link to={"/dashboard"}>
           <RiApps2AiFill className="text-4xl text-primary" />
         </Link>
-        <div className="relative flex h-8 items-center gap-2 bg-gray-800/30 text-forground/80">
+        <div className="relative hidden h-8 items-center gap-2 bg-gray-800/30 text-forground/80 sm:flex">
           <FiSearch className="absolute left-2" />
           <input
             type="text"
@@ -22,7 +22,7 @@ const Topbar = () => {
         </div>
       </div>
       {/* ---> Right side icons */}
-      <div className="flex items-center gap-4 text-forground/70">
+      <div className="flex items-center gap-2 text-forground/70 sm:gap-4">
         <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-gray-600/50">
           <IoMdMail className="text-xl" />
         </div>
@@ -34,7 +34,7 @@ const Topbar = () => {
         <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full bg-gray-600/50">
           <IoMdNotifications />
         </div>
-        <div className="ml-8 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-600/50">
+        <div className="ml-4 flex h-9 w-9 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-gray-600/50 sm:ml-8">
           <img
             src="https://v2theabhipatel.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftheabhipatel.f1b4c67f.png&w=640&q=75"
             alt="profile"
