@@ -53,6 +53,7 @@ const Sidebar: FC<IProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
                 <NavLink
                   key={url}
                   to={url}
+                  onClick={() => setIsSidebarOpen(false)}
                 >
                   <div
                     className={`flex h-10 w-full items-center justify-center text-2xl duration-300 hover:bg-primary/10 ${location.pathname === url ? "text-primary" : "text-forground/70"}`}
