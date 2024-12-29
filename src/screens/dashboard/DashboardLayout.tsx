@@ -11,9 +11,7 @@ const DashboardLayout = () => {
         </div>
         <div className="flex h-[calc(100%-5rem)] w-full bg-yellow-200">
           {/* ---> Sidebar  */}
-          <aside className="h-full w-[5rem] bg-background">
-            <Sidebar />
-          </aside>
+          <Sidebar />
           {/* ---> Main Content  */}
           <main className="h-full w-full overflow-y-auto bg-gradient-to-br from-deepBlack to-[#02071d] p-5">
             <Outlet />

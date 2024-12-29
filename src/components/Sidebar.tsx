@@ -37,26 +37,28 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col gap-1 text-forground">
-      {navlinks.map((item) => {
-        const { url, icon } = item;
-        return (
-          <NavLink
-            key={url}
-            to={url}
-          >
-            <div
-              className={`flex h-10 w-full items-center justify-center text-2xl duration-300 hover:bg-primary/10 ${location.pathname === url ? "text-primary" : "text-forground/70"}`}
+    <aside className="h-full w-[5rem] bg-background">
+      <div className="flex flex-col gap-1 text-forground">
+        {navlinks.map((item) => {
+          const { url, icon } = item;
+          return (
+            <NavLink
+              key={url}
+              to={url}
             >
-              {location.pathname === url && (
-                <div className="absolute left-0 h-7 w-1 rounded-r-sm bg-primary"></div>
-              )}
-              {icon}
-            </div>
-          </NavLink>
-        );
-      })}
-    </div>
+              <div
+                className={`flex h-10 w-full items-center justify-center text-2xl duration-300 hover:bg-primary/10 ${location.pathname === url ? "text-primary" : "text-forground/70"}`}
+              >
+                {location.pathname === url && (
+                  <div className="absolute left-0 h-7 w-1 rounded-r-sm bg-primary"></div>
+                )}
+                {icon}
+              </div>
+            </NavLink>
+          );
+        })}
+      </div>
+    </aside>
   );
 };
 
