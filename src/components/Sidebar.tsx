@@ -45,8 +45,8 @@ const Sidebar: FC<IProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (
     <>
       {isSidebarOpen && (
-        <aside className="fixed inset-0 top-20 flex h-full md:hidden">
-          <div className="z-50 flex h-full w-[5rem] flex-col gap-1 bg-background text-forground">
+        <aside className="fixed inset-0 top-20 z-50 flex h-full md:hidden">
+          <div className="flex h-full w-[5rem] flex-col gap-1 bg-background text-forground">
             {navlinks.map((item) => {
               const { url, icon } = item;
               return (
@@ -70,7 +70,7 @@ const Sidebar: FC<IProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
           {isSidebarOpen && (
             <div
               onClick={() => setIsSidebarOpen(false)}
-              className="z-50 h-full w-full bg-gray-950/70"
+              className="h-full w-full bg-gray-950/70"
             ></div>
           )}
         </aside>
