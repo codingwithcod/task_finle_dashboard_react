@@ -1,11 +1,14 @@
 import Sidebar from "@/components/Sidebar";
+import Topbar from "@/components/Topbar";
 import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {
   return (
     <div className="flex h-screen w-full">
       <div className="flex h-full w-full flex-col bg-white">
-        <div className="h-[5rem] w-full bg-background"></div>
+        <div className="h-[5rem] w-full bg-background">
+          <Topbar />
+        </div>
         <div className="flex h-[calc(100%-5rem)] w-full bg-yellow-200">
           {/* ---> Sidebar  */}
           <aside className="h-full w-[5rem] bg-background">
