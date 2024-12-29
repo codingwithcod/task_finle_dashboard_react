@@ -3,13 +3,30 @@ import { RiApps2AiFill } from "react-icons/ri";
 import { IoSettings } from "react-icons/io5";
 import { IoMdMail, IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { Dispatch, FC, SetStateAction } from "react";
 
-const Topbar = () => {
+interface IProps {
+  isSidebarOpen: boolean;
+  setIsSidebarOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+const Topbar: FC<IProps> = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (
     <div className="flex h-full items-center justify-between px-5">
       {/* ---> Left side Logo and Search bar */}
       <div className="flex items-center gap-10 md:gap-20">
-        <Link to={"/dashboard"}>
+        <button
+          className="md:hidden"
+          onClick={() => setIsSidebarOpen((prev) => !prev)}
+        >
+          <RiApps2AiFill
+            className={`text-4xl text-primary duration-300 ${isSidebarOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+        <Link
+          to={"/dashboard"}
+          className="hidden md:block"
+        >
           <RiApps2AiFill className="text-4xl text-primary" />
         </Link>
         <div className="relative hidden h-8 items-center gap-2 bg-gray-800/30 text-forground/80 sm:flex">
