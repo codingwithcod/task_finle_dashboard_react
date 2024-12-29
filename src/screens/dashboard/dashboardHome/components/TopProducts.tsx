@@ -19,7 +19,7 @@ const TopProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axiosClient.get("/products/search?q=phone");
+      const res = await axiosClient.get("/products/search?q=phone&limit=20");
       setProducts(res.data.products);
     } catch (error) {
       // as now now disable eslint rule for console

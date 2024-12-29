@@ -1,27 +1,38 @@
+import { axiosClient } from "@/utils/axiosClient";
+import { useEffect, useState } from "react";
+
+interface IUser {
+  firstName: string;
+  lastName: string;
+  age: number;
+  gender: string;
+  phone: string;
+  image: string;
+  address: {
+    city: string;
+  };
+}
+
 const CustomerTable = () => {
+  const [users, setUsers] = useState<IUser[]>([]);
+
+  /** ---> Fetching products on load. */
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const fetchProducts = async () => {
+    try {
+      const res = await axiosClient.get("/users?limit=20");
+      setUsers(res.data.users);
+    } catch (error) {
+      // as now now disable eslint rule for console
+      console.log(error); // eslint-disable-line
+    }
+  };
   return (
     <div className="p-3">
-      <h2 className="font-bold">Customers</h2>
-      {/* <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Gender</th>
-            <th>Phone</th>
-            <th>City</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>John doe</td>
-            <td>35</td>
-            <td>Male</td>
-            <td>934593458345</td>
-            <td>California</td>
-          </tr>
-        </tbody>
-      </table> */}
+      <h2 className="mb-3 font-bold">Customers</h2>
 
       <div className="overflow-x-auto">
         <table className="min-w-full border-collapse text-sm">
@@ -35,23 +46,26 @@ const CustomerTable = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-400/50 text-forground/70">
-            {[...new Array(10)].map((_, index) => {
+            {users.map((user, index) => {
+              const { firstName, lastName, image, age, gender, phone, address } = user;
               return (
                 <tr key={index}>
                   <td className="flex items-center gap-2 px-4 py-2">
                     <div className="h-9 w-9 overflow-hidden rounded-full border-2 border-gray-600/40">
                       <img
-                        src="https://dummyjson.com/icon/michaelw/128"
+                        src={image}
                         alt="customer profile"
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    John Doe
+                    <p>
+                      {firstName} {lastName}
+                    </p>
                   </td>
-                  <td className="px-4 py-2">35</td>
-                  <td className="px-4 py-2">Male</td>
-                  <td className="px-4 py-2">934593458345</td>
-                  <td className="px-4 py-2">California</td>
+                  <td className="px-4 py-2">{age}</td>
+                  <td className="px-4 py-2">{gender}</td>
+                  <td className="px-4 py-2">{phone}</td>
+                  <td className="px-4 py-2">{address.city}</td>
                 </tr>
               );
             })}
