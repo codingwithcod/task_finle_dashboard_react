@@ -4,7 +4,7 @@ import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 
 const KPIBox = () => {
   return (
-    <div className="grid w-full grid-cols-4 gap-3 lg:w-[65%]">
+    <div className="grid w-full grid-cols-2 gap-3 md:grid-cols-4 lg:w-[65%]">
       <div className="flex h-28 flex-col justify-between rounded-md bg-background p-3">
         <div className="flex flex-col gap-1">
           <div className="flex h-9 w-9 items-center justify-center rounded-md bg-blue-500/20">
