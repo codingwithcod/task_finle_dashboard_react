@@ -26,7 +26,7 @@ const CustomerTable = () => {
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
-      const res = await axiosClient.get("/users?limit=20&delay=2000");
+      const res = await axiosClient.get("/users?limit=20&delay=1000");
       setUsers(res.data.users);
     } catch (error) {
       // as now now disable eslint rule for console
